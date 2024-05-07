@@ -41,6 +41,7 @@ services:
         - DATABASE_URL=${NEXTJS_DATABASE_URL}
         - SUDO_PASSWORD=${NEXTJS_SUDO_PASSWORD}
         - PWA=${PWA}
+        - TILE_SERVER_URL=${TILE_SERVER_URL}
       #   - ROLE=FRONT
       #   - ENV_MODE=development
       #   - endpoint=${dev_endpoint}
