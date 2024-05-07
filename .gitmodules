@@ -1,6 +1,6 @@
 [submodule "nextjs-nexus"]
 	path = nextjs-nexus
-	url = https://github.com/prisma-cms/nextjs-nexus
+	url = git@github.com:walky-travel/walky.travel.git
 	branch = master
 [submodule "tileserver/data/osm-bright-gl-style"]
 	path = tileserver/data/osm-bright-gl-style
