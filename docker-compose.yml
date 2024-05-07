@@ -86,6 +86,12 @@ services:
       # Relay Ports
       #      - "49152-65535:49152-65535"
       #      - "49152-65535:49152-65535/udp"
+
+  tileserver:
+    image: maptiler/tileserver-gl
+    volumes:
+      - "./tileserver/data:/data"
+    command: ["-p", "80", "-c", "/data/conf.json"]
       
 
 # volumes:

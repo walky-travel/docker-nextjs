@@ -2,3 +2,6 @@
 	path = nextjs-nexus
 	url = https://github.com/prisma-cms/nextjs-nexus
 	branch = master
+[submodule "tileserver/data/osm-bright-gl-style"]
+	path = tileserver/data/osm-bright-gl-style
+	url = https://github.com/openmaptiles/osm-bright-gl-style.git

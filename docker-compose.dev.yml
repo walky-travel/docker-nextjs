@@ -36,3 +36,8 @@ services:
     command: bash -c "yarn dev"
     ports:
       - 3000:3000
+
+  tileserver:
+    user: root
+    ports:
+      - "8080:80"
