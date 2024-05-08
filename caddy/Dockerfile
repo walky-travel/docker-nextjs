@@ -1,10 +1,8 @@
-FROM abiosoft/caddy
+FROM caddy
 
 RUN apk update
 RUN apk add mc
 
-WORKDIR /etc
+WORKDIR /etc/caddy
 
-COPY . .
-
-RUN touch Caddyfile
+COPY ./Caddyfile .
