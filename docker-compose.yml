@@ -1,13 +1,12 @@
 version: "3.7"
 
 services:
-
   mysql:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
-      # Can set another path 
+      # Can set another path
       - ./mysql/data:/var/lib/mysql
 
   pma:
@@ -25,18 +24,17 @@ services:
       - ACME_AGREE=true
     build:
       context: ./caddy
-  
+
   # mail-server
   mail:
     image: mailhog/mailhog
-
 
   nextjs-nexus:
     tty: true
     build:
       context: ./nextjs-nexus
       network: ${NETWORK_NAME:-prisma-cms-default}
-      args: 
+      args:
         - SITE=nextjs-nexus
         - DATABASE_URL=${NEXTJS_DATABASE_URL}
         - SUDO_PASSWORD=${NEXTJS_SUDO_PASSWORD}
@@ -49,14 +47,13 @@ services:
     volumes:
       - ./nextjs-nexus/shared:/www/nextjs-nexus/shared
       - ./nextjs-nexus/uploads:/www/nextjs-nexus/uploads
-    env_file: 
+    env_file:
       - .env
-    environment: 
+    environment:
       - DATABASE_URL=${NEXTJS_DATABASE_URL}
       - SUDO_PASSWORD=${NEXTJS_SUDO_PASSWORD}
     #   - API_ENDPOINT=${API_ENDPOINT:-http://api:4000}
     #   - ENV_MODE=development
-
 
   rtcmultyconnection:
     tty: true
@@ -93,7 +90,17 @@ services:
     volumes:
       - "./tileserver/data:/data"
     command: ["-p", "80", "-c", "/data/conf.json"]
-      
+
+  tolgee:
+    image: tolgee/tolgee
+    volumes:
+      - ./tolgee/data:/data
+      - ./tolgee/config.yaml:/config.yaml # <--- this line
+    env_file:
+      - .env
+    # ports:
+    #   - "25432:25432"
+    #   - "8080:8080"
 
 # volumes:
 #   mysql:

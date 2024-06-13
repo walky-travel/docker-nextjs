@@ -33,3 +33,10 @@
         websocket
     }
 }
+
+
+tolgee.localhost:443 {
+    tls internal
+   
+    reverse_proxy http://tolgee:8080
+}
