@@ -102,6 +102,12 @@ services:
     #   - "25432:25432"
     #   - "8080:8080"
 
+  libretranslate:
+    image: libretranslate/libretranslate
+    user: "root"
+    volumes:
+      - ./libretranslate/db/argos-translate/packages:/root/.local/share/argos-translate/packages
+
 # volumes:
 #   mysql:
 

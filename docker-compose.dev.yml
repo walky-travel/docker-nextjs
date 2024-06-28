@@ -1,10 +1,9 @@
 version: "3.7"
 
 services:
-
   mysql:
     ports:
-      - '3306:3306'
+      - "3306:3306"
 
   proxy:
     ports:
@@ -41,3 +40,7 @@ services:
     user: root
     ports:
       - "8080:80"
+
+  libretranslate:
+    ports:
+      - "5000:5000"

@@ -2,13 +2,13 @@ version: "3.7"
 
 services:
   mysql:
-    restart: always
+    restart: unless-stopped
 
   pma:
-    restart: always
+    restart: unless-stopped
 
   proxy:
-    restart: always
+    restart: unless-stopped
     environment:
       - ACME_AGREE=true
     ports:
@@ -16,7 +16,7 @@ services:
       - 443:443
 
   nextjs-nexus:
-    restart: always
+    restart: unless-stopped
     environment:
       ENV_MODE: production
     build:
@@ -25,13 +25,16 @@ services:
     command: bash -c "yarn start"
 
   rtcmultyconnection:
-    restart: always
+    restart: unless-stopped
 
   coturn:
-    restart: always
+    restart: unless-stopped
 
   tileserver:
-    restart: always
+    restart: unless-stopped
 
   tolgee:
-    restart: always
+    restart: unless-stopped
+
+  libretranslate:
+    restart: unless-stopped
