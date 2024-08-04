@@ -10,7 +10,7 @@
       "pngQuantization": false,
       "png": 90
     },
-    "maxSize": 2048,
+    "maxSize": 256,
     "pbfAlias": "pbf"
   },
   "styles": {

@@ -95,7 +95,7 @@ services:
     image: tolgee/tolgee
     volumes:
       - ./tolgee/data:/data
-      - ./tolgee/config.yaml:/config.yaml # <--- this line
+      # - ./tolgee/config.yaml:/config.yaml # <--- this line
     env_file:
       - .env
     # ports:
